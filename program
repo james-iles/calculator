@@ -1,0 +1,54 @@
+while True: #Wrap the code in a while loop to allow repeated use until the user choses to exit.
+  
+  #Ask the user to Enter their first number:
+  first_number = float(input("Enter the first number: "))
+  #Ask the user to enter their second number:
+  second_number = float(input("Enter the second number: "))
+  #Initialise an empty variable to store the result:
+  result = None
+  
+  #Ask the user to choose an operation, including the option to end the program:
+  print("Enter the operation you want to perform:")
+  print("1. Addition")
+  print("2. Subtraction")
+  print("3. Multiplication")
+  print("4. Division")
+  print("5. Exit")
+  
+  #Read the user's choice and assign it to a new variable as an Integer:
+  operation = int(input("Enter your choice (1/2/3/4/5): "))
+    
+  #Perform addition if user chooses "1" and assign the result to the 'result' variable:
+  if operation == 1:
+    result = first_number + second_number
+      
+  #Perform Subtraction if user chooses "2" and assign the result to the 'result' variable:
+  elif operation == 2:
+    result = first_number - second_number
+      
+  #Perform multiplication if user chooses "3" and assign the result to the 'result' variable:
+  elif operation == 3:
+    result = first_number * second_number
+      
+  #Perform division if user chooses "4":
+  elif operation == 4:
+    #First check the second number is not zero and assign the rounded result to the 'result' variable:
+    if second_number != 0:
+      result = round(first_number / second_number) #Round result to nearest whole number
+      #If the second number is zero, display an error message:
+    else:
+      print("\nError: Division by zero!")
+      #Add an empty line before repeating the prgram for aesthetics:
+      print()
+      
+  #Exit the program if user chooses "5":
+  elif operation == 5:
+    print("\nExiting the program...")
+    #Break the while loop to end the program:
+    break
+    
+  #If the result variable has a value (and program has not found an error or been exited), print result:
+  if result is not None:
+      print(f"\nResult: {result}")
+    #Add an empty line before repeating the prgram for aesthetics:
+      print()
